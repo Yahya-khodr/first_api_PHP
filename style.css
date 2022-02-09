@@ -4,16 +4,19 @@
   box-sizing: border-box;
   list-style: none;
 }
-
-.background {
+body {
   width: 100%;
   height: 100vh;
-  font-family: sans-serif;
   background: linear-gradient(#141e30, #243b55);
+  background-attachment: fixed;
+}
+.background {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 .title {
   font-size: 2.5rem;
@@ -22,7 +25,8 @@
   font-weight: 900;
 }
 .container {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   place-items: center;
   width: 100%;
@@ -33,36 +37,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-around;
 }
-.card-number {
-  width: 400px;
-  height: 400px;
-  margin-right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
+.space {
+  padding: 15px 0;
 }
-.card-string {
-  width: 400px;
-  height: 400px;
-  margin-right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-}
-.card-hash {
-  width: 400px;
-  height: 400px;
-  margin-right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-}
-
-.card-blank {
-  width: 400px;
-  height: 400px;
+.card {
+  padding: 10px 20px;
   margin-right: 10px;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -88,8 +68,8 @@
   color: #02878e;
   font-size: 0.8rem;
   text-shadow: 2px 3px black;
+  padding: 15px 0;
 }
-
 .card-input input {
   color: white;
   background-color: transparent;
@@ -106,10 +86,26 @@
   opacity: 1;
 }
 .card-desc p {
+  width: auto;
   color: #233a54;
   font-style: italic;
 }
 .card-result {
   color: white;
   font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  body {
+    text-align: center;
+  }
+  .title {
+    padding-bottom: 20px;
+  }
+  .container {
+    flex-wrap: wrap;
+  }
+  .card {
+    margin-bottom: 30px;
+  }
 }
