@@ -86,7 +86,6 @@ body {
   opacity: 1;
 }
 .card-desc p {
-  width: auto;
   color: #233a54;
   font-style: italic;
 }
@@ -103,9 +102,12 @@ body {
     padding-bottom: 20px;
   }
   .container {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
   .card {
     margin-bottom: 30px;
+
+    justify-content: center;
+    align-items: center;
   }
 }
