@@ -1,9 +1,11 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
 $string = $_GET["pass"];
 if (preg_match('/[A-Za-z]/', $string) && preg_match('/[0-9]/', $string)) {
-    $result = "true";
+    $result = "included";
 } else {
-    $result = "false";
+    $result = "not included";
 }
 $string = str_replace(' ', '', $string);
 $character = strlen($string);

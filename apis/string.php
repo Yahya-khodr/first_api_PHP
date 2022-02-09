@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 function Palindrome($string)
 {
     if (strrev($string) == $string) {
