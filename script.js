@@ -23,17 +23,23 @@ const blank_result = document.getElementById("blank_result");
 const pal_result = document.getElementById("pal_result");
 const equa_result = document.getElementById("equa_result");
 
+//clear btns
+const clear_equa = document.getElementById("clear_equa");
+const clear_pal = document.getElementById("clear_pal");
+const clear_space = document.getElementById("clear_space");
+const clear_hash = document.getElementById("clear_hash");
 // password
 async function checkPass(pass) {
   let res = await fetch(passApi + pass);
   let data = await res.json();
-  hash_result.innerHTML = data.strong_pass;
+  hash_result.textContent = data.strong_pass;
 }
 btn_pass.addEventListener("click", () => {
   if (input_hash.value != 0) {
     checkPass(input_hash.value);
   }
 });
+clear(clear_hash, input_hash, hash_result);
 
 // blank space
 async function blank(str) {
@@ -46,6 +52,7 @@ btn_blank.addEventListener("click", () => {
     blank(input_blank.value);
   }
 });
+clear(clear_space, input_blank, blank_result);
 
 // for palindrom
 async function checkPalindrome(elem) {
@@ -61,6 +68,7 @@ btn_pal.addEventListener("click", () => {
     input_pal.focus();
   }
 });
+clear(clear_pal, input_pal, pal_result);
 
 // for equation
 async function equation(nb1, nb2) {
@@ -75,3 +83,13 @@ btn_equa.addEventListener("click", () => {
     input_number1.focus();
   }
 });
+clear(clear_equa, input_number1, equa_result);
+clear(clear_equa, input_number2, equa_result);
+
+// clear f
+function clear(btn, input, res) {
+  btn.addEventListener("click", () => {
+    input.value = "";
+    res.textContent = "";
+  });
+}

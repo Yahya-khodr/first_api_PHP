@@ -92,7 +92,6 @@ body {
   place-items: center;
 }
 .card-desc p {
-  
   color: #233a54;
   font-style: italic;
 }
@@ -110,10 +109,12 @@ body {
   }
   .container {
     flex-direction: column;
+    margin-bottom: 20px;
   }
   .card {
     margin-bottom: 30px;
-
+    width: 300px;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
