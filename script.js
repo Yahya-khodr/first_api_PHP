@@ -28,6 +28,7 @@ const clear_equa = document.getElementById("clear_equa");
 const clear_pal = document.getElementById("clear_pal");
 const clear_space = document.getElementById("clear_space");
 const clear_hash = document.getElementById("clear_hash");
+
 // password
 async function checkPass(pass) {
   let res = await fetch(passApi + pass);
