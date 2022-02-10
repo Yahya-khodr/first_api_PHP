@@ -85,7 +85,14 @@ body {
   color: #233a54;
   opacity: 1;
 }
+.card-desc {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  place-items: center;
+}
 .card-desc p {
+  
   color: #233a54;
   font-style: italic;
 }
@@ -109,5 +116,8 @@ body {
 
     justify-content: center;
     align-items: center;
+  }
+  .card-input input {
+    margin-bottom: 5px;
   }
 }

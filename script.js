@@ -27,13 +27,12 @@ const equa_result = document.getElementById("equa_result");
 async function checkPass(pass) {
   let res = await fetch(passApi + pass);
   let data = await res.json();
-  hash_result.innerHTML = `sha256: ${data.hash} Secured Pass: ${data.strong_pass}`;
+  hash_result.innerHTML = data.strong_pass;
 }
 btn_pass.addEventListener("click", () => {
   if (input_hash.value != 0) {
     checkPass(input_hash.value);
   }
-  input_hash.value = "";
 });
 
 // blank space
@@ -46,7 +45,6 @@ btn_blank.addEventListener("click", () => {
   if (input_blank.value != 0) {
     blank(input_blank.value);
   }
-  input_blank.value = "";
 });
 
 // for palindrom
@@ -62,7 +60,6 @@ btn_pal.addEventListener("click", () => {
     pal_result.textContent = "Please Enter a word";
     input_pal.focus();
   }
-  input_pal.value = "";
 });
 
 // for equation
@@ -77,6 +74,4 @@ btn_equa.addEventListener("click", () => {
   } else {
     input_number1.focus();
   }
-  input_number1.value = "";
-  input_number2.value = "";
 });
